@@ -551,7 +551,7 @@ template: `<h1>{{title}}</h1><h2>{{recipe}} details</h2>`
 
 app.component.ts (Recipe class)
 
-- convert hero from a literal string to a class:
+- convert recipe from a literal string to a class:
 
 ```js
 import { Component } from '@angular/core';
@@ -805,6 +805,8 @@ Replace selectedRecipe with recipe in the template:
 
 The recipe property - `recipe: Recipe;` - is needed in both components so we make a new file.
 
+`/common/recipe.ts`
+
 ```js
 export class Recipe {
     id: number;
@@ -818,7 +820,7 @@ then in both components:
 import { Recipe } from './common/recipe';
 ```
 
-Declare recipe as an input:
+Declare recipe as an input in recipe-detail.component:
 
 ```js
 export class RecipeDetailComponent {
@@ -847,7 +849,7 @@ export class RecipeDetailComponent {
 Now the app.module
 
 ```js
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RecipeDetailComponent } from './recipe-detail.component';
 ...
 @NgModule({
   imports: [BrowserModule, FormsModule],
